@@ -1,0 +1,31 @@
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.modal--active {
+    display: block;
+}
+
+.modal__container {
+    width: 80%;
+    margin: 50px auto;
+    padding: 50px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #ececec;
+}
+
+.modal__label {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+}
+
+.modal__inputs {
+    display: flex;
+    flex-direction: column;
+}
