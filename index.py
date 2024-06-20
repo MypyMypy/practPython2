@@ -92,6 +92,21 @@ print_table_data('objects', cur)
 print_table_data('positions', cur)
 print_table_data('sector', cur)
 
+# Вызов процедуры JoinTables для объединения таблиц
+try:
+    cur.execute("CALL JoinTables('Sector', 'Objects')")
+    result = cur.fetchall()
+    print('<h2>JoinTables Result</h2>')
+    print('<table class=\'tView1\'>')
+    for row in result:
+        print('<tr>')
+        for cell in row:
+            print(f'<td>{cell}</td>')
+        print('</tr>')
+    print('</table>')
+except mysql.connector.Error as err:
+    print(f"Error: {err}")
+
 myconn.close()
 
 # Путь к файлу foot.inc
